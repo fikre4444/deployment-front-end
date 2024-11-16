@@ -14,11 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js
-      - name: Set up Node.js
+      # Step 2: Set up Node.js (we allow Node.js 20, since actions will use it)
+      - name: Set up Node.js 16 (for the build step)
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Use the Node.js version that your project requires
+          node-version: '16'  # Use Node.js version 16 for building your app
 
       # Step 3: Install dependencies
       - name: Install dependencies
@@ -33,7 +33,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages  # Deploy to the "gh-pages" branch
-          folder: dist      # Folder that contains the built app
+          folder: dist      # Folder that contains the built app (Vite uses 'dist' by default)
           token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authentication
-
-          #abcd
