@@ -9,8 +9,14 @@ function App() {
   const [ response, setResponse ] = useState(false);
 
   const handleClick = async () => {
-    const response = await axiosInstance.get("api/greet/hello?name="+name);
+    // const response = await axiosInstance.get("api/greet/hello?name="+name);
+    const response = await axiosInstance.get(`/api/greet/hello?name=${name}`, {
+      headers: {
+          "ngrok-skip-browser-warning": "69420",
+      },
+  });
     console.log(response.data);
+    console.log(response)
     setGotResponse(true);
     setResponse(response.data);
   }
