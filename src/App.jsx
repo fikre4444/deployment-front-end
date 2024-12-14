@@ -31,7 +31,7 @@ function App() {
           type="text" size="10" 
           placeholder="input Your name" 
         />
-        <button onClick={handleClick}>Get Greetingfdlksjflsdkjf</button>
+        <button onClick={handleClick}>Get Greetingfdlksjflslkdjfsdlkjdkjf</button>
        </>
       }
        {!!gotResponse && 
